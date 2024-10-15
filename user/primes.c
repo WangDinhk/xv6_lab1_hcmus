@@ -1,47 +1,31 @@
 #include "kernel/types.h"
 #include "kernel/stat.h"
 #include "user/user.h"
-#define RD 0
-#define WR 1
 
-int main(int argc, char *argv[])
-{
-	int pp[2];	
-	int prime;
-	int data;
-	int pid=0;
+#define MAX_NUM 280
 
-	
-	pipe(pp);
-	for (int i=2; i<=35; i++)
-		write(pp[WR], &i, sizeof(int));
-	close(0);
-	dup(pp[RD]);
-	close(pp[RD]);
-	close(pp[WR]);
-	prime=2;
-	printf("prime 2\n");
+void findPrimes() {
+    int numbers[MAX_NUM - 1];
+    int i, j, n = 0;
 
-	while (read(0, &data, sizeof(int))) {
-		if (data % prime != 0) {
-			if (!pid) {	
-				pipe(pp);
-				pid=fork();
-				if (pid) {	
-					close(pp[RD]);
-				} else {	
-					close(0);
-					dup(pp[RD]);
-					close(pp[RD]);
-					close(pp[WR]);
-					prime=data;
-					printf("prime %d\n", data);
-				}
-			}
-			write(pp[WR], &data, sizeof(int));
-		}
-	}
-	close(pp[WR]);
-	wait(0);
-	exit(0);
+    for (i = 2; i <= MAX_NUM; i++) {
+        numbers[n++] = i;
+    }
+
+    for (i = 0; i < n; i++) {
+        if (numbers[i] != 0) {
+            printf("prime %d\n", numbers[i]);
+            
+            for (j = i + 1; j < n; j++) {
+                if (numbers[j] % numbers[i] == 0) {
+                    numbers[j] = 0;
+                }
+            }
+        }
+    }
+}
+
+int main(int argc, char *argv[]) {
+    findPrimes();
+    exit(0);
 }
