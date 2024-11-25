@@ -321,6 +321,9 @@ fork(void)
   acquire(&np->lock);
   np->state = RUNNABLE;
   release(&np->lock);
+  
+  // Copy parent's trace mask to child
+  np->trace_mask = p->trace_mask;
 
   return pid;
 }
@@ -693,3 +696,4 @@ procdump(void)
     printf("\n");
   }
 }
+
