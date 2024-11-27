@@ -1,0 +1,17 @@
+Looking at the backtrace output, which function called syscall?
+Trả lời: Theo kết quả đầu ra của backtrace, hàm gọi system call là usertrap().
+
+What is the value of p->trapframe->a7 and what does that value represent? (Hint: look user/initcode.S, the first user program xv6 starts.)
+Trả lời: Giá trị của p->trapframe->a7 là 7. Giá trị này biểu thị ID của system call SYS_exec.
+
+What was the previous mode that the CPU was in?
+Trả lời: Mode trước đó của CPU là user mode, do bit SPP manng giá trị 0( trap bắt nguồn từ user mode).
+
+Write down the assembly instruction the kernel is panicing at. Which register corresponds to the variable num?
+Tả lời: thanh ghi tươngứng với biến num là thanh ghi lw a3,0(zero).
+
+Why does the kernel crash? Hint: look at figure 3-3 in the text; is address 0 mapped in the kernel address space? Is that confirmed by the value in scause above? (See description of scause in RISC-V privileged instructions)
+Trả lời: Kernel cash là do trong một system call đã truy cập vào một vùng nhớ không được map bời kernel space( thanh ghi 0).
+
+What is the name of the binary that was running when the kernel paniced? What is its process id (pid)?
+Trả lời: tên tệp nhị phân đang chạy khi kernel bị lỗi là initcode và pid của tiến trình này là 1.
