@@ -1,0 +1,57 @@
+Các trang lá trong đầu ra của vmprint() là:
+
+.. .. ..0: pte 0x0000000021fda01b pa 0x0000000087f68000
+Nội dung:
+.. .. ..0: Mục thứ 0 của bảng cấp hiện tại
+pte 0x0000000021fda01b: 
+- 0x21fda000: Số trang vật lý.
+- 0x1b: 0001 1011 => Các bit quyền: PTE_V, PTE_R, PTE_X, PTE_U
+pa 0x0000000087f68000: Kết quả ánh xạ địa chỉ vật lý của trang.
+
+.. .. ..1: pte 0x0000000021fd9417 pa 0x0000000087f65000
+Nội dung:
+.. .. ..1: Mục thứ 1 của bảng cấp hiện tại
+pte 0x0000000021fd9417: 
+- 0x21fd9400: Số trang vật lý.
+- 0x17: 0001 0111 => Các bit quyền: PTE_V, PTE_R, PTE_W, PTE_U
+pa 0x0000000087f65000: Kết quả ánh xạ địa chỉ vật lý của trang.
+
+.. .. ..2: pte 0x0000000021fd9007 pa 0x0000000087f64000
+Nội dung: 
+.. .. ..2: Mục thứ 2 của bảng cấp hiện tại
+pte 0x0000000021fd9007: 
+- 0x21fd9000: Số trang vật lý.
+- 0x07: 0000 0111 => Các bit quyền: PTE_V, PTE_R, PTE_W
+pa 0x0000000087f64000: Kết quả ánh xạ địa chỉ vật lý của trang.
+
+.. .. ..3: pte 0x0000000021fd8c17 pa 0x0000000087f63000
+Nội dung: 
+.. .. ..3: Mục thứ 3 của bảng cấp hiện tại
+pte 0x0000000021fd9007: 
+- 0x21fd8c00: Số trang vật lý.
+- 0x17: 0001 0111 => Các bit quyền: PTE_V, PTE_R, PTE_W, PTE_U
+pa 0x0000000087f63000: Kết quả ánh xạ địa chỉ vật lý của trang.
+
+.. .. ..509: pte 0x0000000021fdcc17 pa 0x0000000087f73000
+Nội dung: 
+.. .. ..509: Mục thứ 509 của bảng cấp hiện tại
+pte 0x0000000021fdcc17: 
+- 0x21fdcc00: Số trang vật lý.
+- 0x17: 0001 0111 => Các bit quyền: PTE_V, PTE_R, PTE_W, PTE_U
+pa 0x0000000087f73000: Kết quả ánh xạ địa chỉ vật lý của trang.
+
+.. .. ..510: pte 0x0000000021fdd007 pa 0x0000000087f74000
+Nội dung: 
+.. .. ..510: Mục thứ 510 của bảng cấp hiện tại
+pte 0x0000000021fdcc17: 
+- 0x21fdd000: Số trang vật lý.
+- 0x07: 0000 0111 => Các bit quyền: PTE_V, PTE_R, PTE_W
+pa 0x0000000087f74000: Kết quả ánh xạ địa chỉ vật lý của trang.
+
+.. .. ..511: pte 0x0000000020001c0b pa 0x0000000080007000
+Nội dung: 
+.. .. ..511: Mục thứ 511 của bảng cấp hiện tại
+pte 0x0000000020001c0b: 
+- 0x20001c00: Số trang vật lý.
+- 0x0b: 0000 1011 => Các bit quyền: PTE_V, PTE_R, PTE_X
+pa 0x0000000080007000: Kết quả ánh xạ địa chỉ vật lý của trang.
